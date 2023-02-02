@@ -10,19 +10,13 @@ def index(request):
 # en un url de equipo tiene que mostrarse /<nombre_equipo>/
 
 def detalle_equipo(request, nombre_equipo):
-    # e = Equipo.objects.get(nombre = nombre_equipo)
-    # juegos = ""
-
-    # for j in e.juego_set.all():
-    #     juegos += j.nombre
-    
-    Equipo.objects.all()
-    Equipo.objects.get(nombre="profes")
-    e = Equipo.objects.get(nombre="profes")
-
-    e.juego_set.all()
-
-    return HttpResponse(f'El nombre del equipo es {nombre_equipo}')
+    vengoDelORMSoyUnaVariable = Equipo.objects.get(nombre = nombre_equipo)
+    context ={
+        'equipoVarParaTemplate':vengoDelORMSoyUnaVariable,
+        'publicidad': "IES Juan De La Cierva",
+        'ultimasNoticias':["Hola","k","ase?"]
+        }
+    return render(request, 'esports/equipo.html', context)
 
 def detalle_juego(request, nombre_juego):
     return HttpResponse(f'El nombre del juego es es {nombre_juego}')

@@ -3,5 +3,5 @@ from . import views
 
 #esto es para url del normal
 urlpatterns = [
-path('',views.index, name='index')
+    path('',views.index, name='index')
 ]

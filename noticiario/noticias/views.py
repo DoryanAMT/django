@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 #nuevas librerias
 from django.http import HttpResponse
 from .models import *
@@ -7,6 +7,8 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    noticias = Noticias.objects.all()
+    noticias = Noticias.objects.get()
     
-    return render(request, 'noticias/index.html')
+    return render(request, 'noticiario/index.html',{
+        'noticiasTemplate': get_object_or_404(Noticias),
+    })

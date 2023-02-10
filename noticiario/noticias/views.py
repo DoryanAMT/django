@@ -7,6 +7,7 @@ from .models import *
 # Create your views here.
 
 def index(request):
+    question = get_object_or_404
     noticias = Noticias.objects.get()
     
     return render(request, 'noticiario/index.html',{

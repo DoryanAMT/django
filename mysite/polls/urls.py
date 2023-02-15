@@ -1,10 +1,16 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from . import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'questions', views.QuestionSerializer)
+
 
 app_name = 'polls'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<int:id>/', views.detalle, name='detalle'),
-    path('<int:id>/vote/', views.vote, name='vote'),
-    path('<int:id>/resultado/', views.resultado, name='resultado'),
+    path('api/', include(router.urls)),
+    path('', views.IndexView.as_view(), name='index'),
+    path('<int:pk>/', views.DetailView.as_view(), name='detalle'),
+    path('<int:pk>/vote/', views.vote, name='vote'),
+    path('<int:pk>/resultado/', views.ResultsView.as_view(), name='resultado'),
 ]

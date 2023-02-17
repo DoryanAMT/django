@@ -1,12 +1,28 @@
 {% extends '_base.html' %}
+{% load static %}
 
-{% block title %}Log In{% endblock %}
+{% block title %} Log In {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'users/login.css' %}">
+<!-- get the required files from 3rd party sources -->
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<!-- use the font -->
+{% endblock %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+<div class="content">
+  <div class="title">
+    <h2>Log In</h2>
+  </div>
+  <div class="data">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+</div>
+
 {% endblock %}
+

@@ -1,0 +1,32 @@
+.content{
+    margin:0 auto;
+    width: 15em;
+    border: 3px solid black;
+    padding: 1em;
+    border-radius: 1em;
+    font-family:'Roboto', sans-serif;
+    
+}
+.data{
+    padding: 0 auto;
+    display: flex;
+}
+data,form>button{
+    text-decoration: none;
+    width: 100%;
+    padding: 0.5em;
+}
+
+data,form,p>input{
+    width:100%;
+}
+data,form,p>label{
+    color:black;
+}
+.errorlist,ul{
+    margin:0 auto;
+    padding-left: 0;
+    width:auto;
+    list-style: none;
+    color:red;
+}

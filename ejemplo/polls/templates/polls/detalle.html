@@ -1,0 +1,19 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block title %} {{ producto.name_product}} {% endblock%}
+
+    {% block css %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/index.html'%}">
+    {% endblock %}
+
+    {% block content %}
+    <div class="producto">
+        <p>{{ producto.name_product }}</p>
+        <p>{{ producto.description_product }}</p>
+        <p>{{ producto.pub_date_product }}</p>
+        <img src="{{ producto.photo_product.url }}" alt="">
+        
+    </div>
+    {% endblock %}

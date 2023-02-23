@@ -1,0 +1,27 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block title %}index{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/index.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+{% if productos %}
+<h1>Frutas</h1>
+    {% for producto in productos %}
+    <div class="producto">
+        <p>{{ producto.name_product }}</p>
+        <p>{{ producto.description_product }}</p>
+        <p>{{ producto.pub_date_product }}</p>
+        <img src="{{ producto.photo_product.url }}" alt="">
+        <a href="{% url 'detalle' producto.id %}">Detalle</a>
+    </div>
+    
+    {% endfor %}
+    <p>asdsad</p>
+{% endif %}
+{% endblock %}

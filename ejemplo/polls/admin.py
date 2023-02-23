@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # de esports importame los modelos.
-from .models import Question,Choice
+from .models import Product
 
-admin.site.register(Question)
+admin.site.register(Product)

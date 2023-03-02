@@ -1,7 +1,7 @@
 # Django tutorial
 
 ## estructura web
-
+```
 └── mysite              # django-admin startproject <nombre>
     ├── db.sqlite3      # Por defecto base de datos SQLite
     ├── manage.py       # Se crea solo, manejar el proyecto
@@ -21,4 +21,4 @@
         ├── tests.py    # Unit testing
         ├── urls.py     # Defino quién controla esa petición (vista -> "controlador")
         └── views.py    # interactúa con modelos y lo pinta en un template (template -> "vista")
-
+```
